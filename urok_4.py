@@ -23,5 +23,10 @@ async def heh(ctx, count_heh = 10):
 async def add(ctx, left: int, right: int):
     """Adds two numbers together."""
     await ctx.send(left + right)
+    
+@bot.command()
+async def rand(ctx):
+    random_number = random.randint(1, 999)
+    await ctx.send(f'Случайное число: {random_number}')
 
 bot.run()
