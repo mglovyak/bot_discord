@@ -29,4 +29,13 @@ async def rand(ctx):
     random_number = random.randint(1, 999)
     await ctx.send(f'Случайное число: {random_number}')
 
+@bot.command()
+async def joker(ctx):
+    img2=os.listdir('img_joker')
+    with open(f'img_joker/{random.choice(img2)}', 'rb') as f:
+        # В переменную кладем файл, который преобразуется в файл библиотеки Discord!
+        picture = discord.File(f)
+   # Можем передавать файл как параметр!
+    await ctx.send(file=picture)
+
 bot.run()
